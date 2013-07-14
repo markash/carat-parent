@@ -6,7 +6,7 @@
     <groupId>za.co.yellowfire</groupId>
     <artifactId>carat-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
 
     <name>Carat Parent</name>
     <description>The measure of performance</description>
@@ -76,13 +76,21 @@
         <dependency>
             <groupId>org.jboss.weld</groupId>
             <artifactId>weld-core</artifactId>
-            <version>2.0.1.Final</version>
+            <version>2.0.2.Final</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet</artifactId>
-            <version>2.0.1.Final</version>
+            <version>2.0.2.Final</version>
             <scope>runtime</scope>
+        </dependency>
+        <!--************************************************************************************************************
+             Date & Time
+        *************************************************************************************************************-->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.2</version>
         </dependency>
         <!--************************************************************************************************************
              Unit Testing
