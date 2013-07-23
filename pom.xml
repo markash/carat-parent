@@ -13,10 +13,22 @@
     <url>http://www.yellowfire.co.za</url>
 
     <properties>
+        <jdk.version>1.7</jdk.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <dependency.metrics.version>3.0.0</dependency.metrics.version>
         <dependency.jdbi.version>2.49</dependency.jdbi.version>
+        <dependency.flywaydb.version>2.2</dependency.flywaydb.version>
         <dependency.postgres.version>9.1-901.jdbc4</dependency.postgres.version>
+        <dependency.jooq.version>3.1.0</dependency.jooq.version>
+        <dependency.lombok.version>0.12.0</dependency.lombok.version>
+        <dependency.lombok.maven.version>0.11.8.0</dependency.lombok.maven.version>
+        <dependency.joda.time.version>2.2</dependency.joda.time.version>
+        <dependency.slf4j.version>1.7.5</dependency.slf4j.version>
+        <dependency.shiro.version>1.2.2</dependency.shiro.version>
+        <test.testng.version>5.14.6</test.testng.version>
+        <test.junit.version>4.8.1</test.junit.version>
+        <test.arquillian.version>1.1.0.Final</test.arquillian.version>
+        <test.arquillian.weld.ee.embedded>1.0.0.CR7</test.arquillian.weld.ee.embedded>
     </properties>
 
     <dependencies>
@@ -52,22 +64,22 @@
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq</artifactId>
-            <version>3.1.0</version>
+            <version>${dependency.jooq.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-meta</artifactId>
-            <version>3.1.0</version>
+            <version>${dependency.jooq.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen</artifactId>
-            <version>3.1.0</version>
+            <version>${dependency.jooq.version}</version>
         </dependency>
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>9.1-901.jdbc4</version>
+            <version>${dependency.postgres.version}</version>
         </dependency>
 
         <!--************************************************************************************************************
@@ -90,7 +102,7 @@
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
-            <version>2.2</version>
+            <version>${dependency.joda.time.version}</version>
         </dependency>
         <!--************************************************************************************************************
              Unit Testing
@@ -98,7 +110,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.8.5</version>
+            <version>${test.testng.version}</version>
             <scope>test</scope>
         </dependency>
         <!--************************************************************************************************************
@@ -112,13 +124,13 @@
         <dependency>
             <groupId>org.jboss.arquillian.container</groupId>
             <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-            <version>1.0.0.CR7</version>
+            <version>${test.arquillian.weld.ee.embedded}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.6.4</version>
+            <version>${dependency.slf4j.version}</version>
             <scope>test</scope>
         </dependency>
         <!--************************************************************************************************************
@@ -145,9 +157,9 @@
             <version>${dependency.metrics.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.yammer.metrics</groupId>
-            <artifactId>metrics-jetty</artifactId>
-            <version>2.2.0</version>
+            <groupId>com.codahale.metrics</groupId>
+            <artifactId>metrics-jetty9</artifactId>
+            <version>${dependency.metrics.version}</version>
         </dependency>
         <!--************************************************************************************************************
              Security
@@ -155,7 +167,7 @@
         <dependency>
             <groupId>org.apache.shiro</groupId>
             <artifactId>shiro-web</artifactId>
-            <version>1.2.2</version>
+            <version>${dependency.shiro.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
@@ -182,7 +194,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>0.11.8</version>
+            <version>${dependency.lombok.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -193,7 +205,7 @@
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
                 <type>pom</type>
-                <version>1.0.4.Final</version>
+                <version>${test.arquillian.version}</version>
                 <scope>import</scope>
             </dependency>
             <dependency>
@@ -204,7 +216,7 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-ext</artifactId>
-                <version>1.7.5</version>
+                <version>${dependency.slf4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>ch.qos.cal10n</groupId>
@@ -227,12 +239,12 @@
                     <plugin>
                         <groupId>org.projectlombok</groupId>
                         <artifactId>lombok-maven-plugin</artifactId>
-                        <version>0.11.8.0</version>
+                        <version>${dependency.lombok.maven.version}</version>
                         <dependencies>
                             <dependency>
                                 <groupId>sun.jdk</groupId>
                                 <artifactId>tools</artifactId>
-                                <version>1.7</version>
+                                <version>${jdk.version}</version>
                                 <scope>system</scope>
                                 <systemPath>${java.home}/../lib/tools.jar</systemPath>
                             </dependency>
