@@ -25,6 +25,7 @@
         <dependency.joda.time.version>2.2</dependency.joda.time.version>
         <dependency.slf4j.version>1.7.5</dependency.slf4j.version>
         <dependency.shiro.version>1.2.2</dependency.shiro.version>
+        <plugin.surefire.version>2.12</plugin.surefire.version>
         <test.testng.version>5.14.6</test.testng.version>
         <test.junit.version>4.8.1</test.junit.version>
         <test.arquillian.version>1.1.0.Final</test.arquillian.version>
@@ -39,6 +40,7 @@
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
+            <scope>provided</scope>
         </dependency>
         <!--************************************************************************************************************
              Java Server Faces
@@ -108,6 +110,12 @@
              Unit Testing
         *************************************************************************************************************-->
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${test.junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${test.testng.version}</version>
@@ -117,14 +125,8 @@
              Integration Testing
         *************************************************************************************************************-->
         <dependency>
-            <groupId>org.jboss.arquillian.testng</groupId>
-            <artifactId>arquillian-testng-container</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.arquillian.container</groupId>
-            <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
-            <version>${test.arquillian.weld.ee.embedded}</version>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -154,11 +156,6 @@
         <dependency>
             <groupId>com.codahale.metrics</groupId>
             <artifactId>metrics-jdbi</artifactId>
-            <version>${dependency.metrics.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codahale.metrics</groupId>
-            <artifactId>metrics-jetty9</artifactId>
             <version>${dependency.metrics.version}</version>
         </dependency>
         <!--************************************************************************************************************
@@ -226,6 +223,18 @@
         </dependencies>
     </dependencyManagement>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.12</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
     <profiles>
         <profile>
             <id>lombok-needs-tools-jar</id>
@@ -252,6 +261,17 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>weld-ee</id>
+            <dependencies>
+                <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
+                    <version>${test.arquillian.weld.ee.embedded}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
         </profile>
     </profiles>
 </project>
