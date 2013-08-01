@@ -1,1 +1,1 @@
-![alt text](https://github.com/markash/carat-parent/logo.png "Carat Parent")
+![alt text](https://github.com/markash/carat-parent/raw/master/logo.png "Carat Parent")
