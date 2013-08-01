@@ -30,6 +30,7 @@
         <test.junit.version>4.8.1</test.junit.version>
         <test.arquillian.version>1.1.0.Final</test.arquillian.version>
         <test.arquillian.weld.ee.embedded>1.0.0.CR7</test.arquillian.weld.ee.embedded>
+        <test.arquillian.jetty9.version>1.0.0.CR2</test.arquillian.jetty9.version>
     </properties>
 
     <dependencies>
@@ -269,6 +270,17 @@
                     <groupId>org.jboss.arquillian.container</groupId>
                     <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
                     <version>${test.arquillian.weld.ee.embedded}</version>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>jetty9</id>
+            <dependencies>
+                 <dependency>
+                    <groupId>org.jboss.arquillian.container</groupId>
+                    <artifactId>arquillian-jetty-embedded-9</artifactId>
+                    <version>${test.arquillian.jetty9.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
