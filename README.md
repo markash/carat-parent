@@ -1,2 +1,1 @@
-carat-parent
-============
+![alt text](https://github.com/markash/carat-parent/logo.png "Carat Parent")
