@@ -25,6 +25,8 @@
         <dependency.joda.time.version>2.2</dependency.joda.time.version>
         <dependency.slf4j.version>1.7.5</dependency.slf4j.version>
         <dependency.shiro.version>1.2.2</dependency.shiro.version>
+	<dependency.webjars.bootstrap.version>3.0.0-rc1</dependency.webjars.bootstrap.version>
+	<dependency.richfaces.cdk.version>4.3.1.Final</dependency.richfaces.cdk.version>
         <plugin.surefire.version>2.12</plugin.surefire.version>
         <test.testng.version>5.14.6</test.testng.version>
         <test.junit.version>4.8.1</test.junit.version>
