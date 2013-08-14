@@ -19,6 +19,7 @@
         <dependency.jdbi.version>2.49</dependency.jdbi.version>
         <dependency.flywaydb.version>2.2</dependency.flywaydb.version>
         <dependency.postgres.version>9.1-901.jdbc4</dependency.postgres.version>
+        <dependency.sqlserver.version>4.0.2206.100</dependency.sqlserver.version>
         <dependency.jooq.version>3.1.0</dependency.jooq.version>
         <dependency.lombok.version>0.12.0</dependency.lombok.version>
         <dependency.lombok.maven.version>0.11.8.0</dependency.lombok.maven.version>
@@ -82,12 +83,7 @@
             <artifactId>jooq-codegen</artifactId>
             <version>${dependency.jooq.version}</version>
         </dependency>
-        <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${dependency.postgres.version}</version>
-        </dependency>
-
+        
         <!--************************************************************************************************************
              Context Dependency Injection
         *************************************************************************************************************-->
@@ -285,6 +281,26 @@
                     <artifactId>arquillian-jetty-embedded-9</artifactId>
                     <version>${test.arquillian.jetty9.version}</version>
                     <scope>test</scope>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>postgres</id>
+            <dependencies>
+                <dependency>
+                    <groupId>postgresql</groupId>
+                    <artifactId>postgresql</artifactId>
+                    <version>${dependency.postgres.version}</version>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>sqlserver</id>
+            <dependencies>
+                <dependency>
+                    <groupId>com.microsoft.sqlserver</groupId>
+                    <artifactId>sqljdbc4</artifactId>
+                    <version>${dependency.sqlserver.version}</version>
                 </dependency>
             </dependencies>
         </profile>
