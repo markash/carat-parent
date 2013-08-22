@@ -29,7 +29,8 @@
     	<dependency.webjars.bootstrap.version>3.0.0-rc.2</dependency.webjars.bootstrap.version>
     	<dependency.richfaces.cdk.version>4.3.1.Final</dependency.richfaces.cdk.version>
         <dependency.richfaces.version>4.3.3.Final</dependency.richfaces.version>
-        <dependency.validator.version>5.0.1.Final</dependency.validator.version>
+        <dependency.validator.version>5.1.0.Alpha1</dependency.validator.version>
+        <dependency.mojarra.version>2.2.2</dependency.mojarra.version>
         <plugin.surefire.version>2.12</plugin.surefire.version>
         <test.testng.version>5.14.6</test.testng.version>
         <test.junit.version>4.8.1</test.junit.version>
