@@ -27,6 +27,7 @@
         <dependency.slf4j.version>1.7.5</dependency.slf4j.version>
         <dependency.shiro.version>1.2.2</dependency.shiro.version>
     	<dependency.webjars.bootstrap.version>3.0.0-rc.2</dependency.webjars.bootstrap.version>
+        <dependency.webjars.jquery.version>1.10.2</dependency.webjars.jquery.version>
     	<dependency.richfaces.cdk.version>4.3.1.Final</dependency.richfaces.cdk.version>
         <dependency.richfaces.version>4.3.3.Final</dependency.richfaces.version>
         <dependency.validator.version>5.1.0.Alpha1</dependency.validator.version>
