@@ -32,6 +32,7 @@
         <dependency.richfaces.version>4.3.3.Final</dependency.richfaces.version>
         <dependency.validator.version>5.1.0.Alpha1</dependency.validator.version>
         <dependency.mojarra.version>2.2.2</dependency.mojarra.version>
+        <dependency.jsoup.version>1.7.2</dependency.jsoup.version>
         <plugin.surefire.version>2.12</plugin.surefire.version>
         <test.testng.version>5.14.6</test.testng.version>
         <test.junit.version>4.8.1</test.junit.version>
@@ -93,6 +94,11 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${dependency.validator.version}</version>
+        </dependency>
+        <dependency> <!-- HTML parser required by Hibernate Validator -->
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${dependency.jsoup.version}</version>
         </dependency>
         <!--************************************************************************************************************
              Date & Time
