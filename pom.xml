@@ -21,6 +21,7 @@
         <dependency.postgres.version>9.1-901.jdbc4</dependency.postgres.version>
         <dependency.sqlserver.version>4.0.2206.100</dependency.sqlserver.version>
         <dependency.jooq.version>3.1.0</dependency.jooq.version>
+        <dependency.modelmapper.version>0.6.1</dependency.modelmapper.version>
         <dependency.lombok.version>0.12.0</dependency.lombok.version>
         <dependency.lombok.maven.version>0.11.8.0</dependency.lombok.maven.version>
         <dependency.joda.time.version>2.2</dependency.joda.time.version>
@@ -33,7 +34,12 @@
         <dependency.richfaces.version>4.3.3.Final</dependency.richfaces.version>
         <dependency.validator.version>5.1.0.Alpha1</dependency.validator.version>
         <dependency.mojarra.version>2.2.2</dependency.mojarra.version>
+        <dependency.omnifaces.version>1.5</dependency.omnifaces.version>
         <dependency.jsoup.version>1.7.2</dependency.jsoup.version>
+        <dependency.weld.version>2.0.3.Final</dependency.weld.version>
+        <dependency.weld.servlet.version>2.0.3.Final</dependency.weld.servlet.version>
+        <dependency.atomikos.version>3.9.0.M1</dependency.atomikos.version>
+        <dependency.jetty9.version>9.0.5.v20130815</dependency.jetty9.version>
         <plugin.surefire.version>2.12</plugin.surefire.version>
         <test.testng.version>5.14.6</test.testng.version>
         <test.junit.version>4.8.1</test.junit.version>
@@ -60,7 +66,7 @@
         <dependency>
             <groupId>org.omnifaces</groupId>
             <artifactId>omnifaces</artifactId>
-            <version>1.5</version>
+            <version>${dependency.omnifaces.version}</version>
         </dependency>
         <!--************************************************************************************************************
              Java Persistence
@@ -68,12 +74,12 @@
         <dependency>
             <groupId>org.modelmapper</groupId>
             <artifactId>modelmapper</artifactId>
-            <version>0.6.1</version>
+            <version>${dependency.modelmapper.version}</version>
         </dependency>
         <dependency>
           <groupId>org.modelmapper.extensions</groupId>
           <artifactId>modelmapper-jooq</artifactId>
-          <version>0.6.1</version>
+          <version>${dependency.modelmapper.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jooq</groupId>
@@ -89,6 +95,19 @@
             <groupId>org.jooq</groupId>
             <artifactId>jooq-codegen</artifactId>
             <version>${dependency.jooq.version}</version>
+        </dependency>
+        <!--************************************************************************************************************
+             Database Connectivity
+        *************************************************************************************************************-->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${dependency.postgres.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>${dependency.sqlserver.version}</version>
         </dependency>
         <!--************************************************************************************************************
              Validation
@@ -348,26 +367,6 @@
                     <artifactId>arquillian-jetty-embedded-9</artifactId>
                     <version>${test.arquillian.jetty9.version}</version>
                     <scope>test</scope>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>postgres</id>
-            <dependencies>
-                <dependency>
-                    <groupId>postgresql</groupId>
-                    <artifactId>postgresql</artifactId>
-                    <version>${dependency.postgres.version}</version>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>sqlserver</id>
-            <dependencies>
-                <dependency>
-                    <groupId>com.microsoft.sqlserver</groupId>
-                    <artifactId>sqljdbc4</artifactId>
-                    <version>${dependency.sqlserver.version}</version>
                 </dependency>
             </dependencies>
         </profile>
